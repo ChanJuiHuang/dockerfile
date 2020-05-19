@@ -1,7 +1,7 @@
 FROM nginx:stable
 
-RUN apt-get update && apt-get install -y cron \
-logrotate
+RUN rm -rf /etc/cron.daily/*
+RUN apt-get update && apt-get install -y logrotate
 
 RUN groupadd -g 999 -r docker && useradd -u 999 -g 999 -r docker
 
