@@ -27,3 +27,7 @@ stdout_logfile=<log file path>
 
 2. included config in /etc/supervisor/conf.d
 3. [supervisor website](http://supervisord.org/index.html)
+
+### redis
+1. redis.conf at /usr/local/etc/redis/redis.conf
+2. users.acl at /usr/local/etc/redis/users.acl
