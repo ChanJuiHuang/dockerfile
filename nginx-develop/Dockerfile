@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y logrotate
 RUN apt-get install -y net-tools \
 iputils-ping \
 tcpdump \
+htop \
+less \
 vim
 
 RUN groupadd -g 999 -r docker && useradd -u 999 -g 999 -r docker
