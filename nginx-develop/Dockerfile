@@ -3,7 +3,7 @@ FROM cjhuang/nginx:latest
 RUN apt-get install -y net-tools \
 iputils-ping \
 tcpdump \
-top \
+procps \
 htop \
 less \
 vim
