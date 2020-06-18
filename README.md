@@ -37,3 +37,6 @@ stdout_logfile=<log file path>
 ### mysql
 1. create predefined password that is "root" for root user
 2. you should change your password of thr root user
+3. **TZ** that is environment variable can change system time zone
+4. slow log and error in /var/log/mysql
+5. database data in /var/lib/mysql
