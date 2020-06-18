@@ -1,0 +1,95 @@
+# Copyright (c) 2014, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA
+
+#
+# The MySQL  Server configuration file.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+basedir		= /usr
+datadir		= /var/lib/mysql
+
+# general
+max_connections = 151
+connect_timeout = 10
+wait_timeout = 60
+max_execution_time = 10
+
+# character set and collation
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+# log
+log_error	= /var/log/mysql/error.log
+log_timestamps = SYSTEM
+
+# general log
+#general_log = 1
+#general_log_file = /var/log/mysql/general.log
+
+# slow log
+slow_query_log	= 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 3
+log_queries_not_using_indexes = 1
+log_throttle_queries_not_using_indexes = 100
+
+# binary log
+log_bin_basename = /var/lib/mysql/binlog
+log_bin_index = /var/lib/mysql/binlog.index
+log_slave_updates = OFF
+binlog_format = ROW
+max_binlog_size = 1073741824
+binlog_checksum = CRC32
+sync_binlog = 1
+binlog_expire_logs_seconds = 2592000
+
+# relay log
+relay_log = relay-bin
+relay_log_index = /var/lib/mysql/relay-bin.index
+
+# auto increament
+innodb_autoinc_lock_mode = 2
+
+# double write buffer
+innodb_doublewrite = ON
+
+# redo log
+innodb_log_file_size = 1G
+innodb_log_files_in_group = 4
+
+# buffer pool
+innodb_buffer_pool_chunk_size = 536870912
+innodb_buffer_pool_instances = 1
+innodb_buffer_pool_size = 536870912
+# innodb_io_capacity, use fio test device IOPS
+
+# log buffer
+innodb_flush_log_at_trx_commit = 1
+
+# replication
+gtid_mode=ON
+enforce-gtid-consistency=ON
