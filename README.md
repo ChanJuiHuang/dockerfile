@@ -4,6 +4,7 @@
 * [supervisor](#supervisor)
 * [redis](#redis)
 * [mysql](#mysql)
+* [php-fpm](#php-fpm)
 
 ### nginx
 1. logrotate config of nginx at /etc/logrotate.d/nginx
@@ -40,3 +41,9 @@ stdout_logfile=<log file path>
 3. **TZ** that is environment variable can change system time zone
 4. slow log and error in /var/log/mysql
 5. database data in /var/lib/mysql
+
+### php-fpm
+1. php ini file at /usr/local/etc/php
+2. php fpm log path is /usr/local/var/log/php-fpm.log
+3. /etc/cron.d has laravel scheduler
+4. xdebug settings in /usr/local/etc/php/conf.d/xdebug.ini (only for development image tag)
