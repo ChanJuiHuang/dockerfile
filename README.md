@@ -45,5 +45,5 @@ stdout_logfile=<log file path>
 ### php-fpm
 1. php ini file at /usr/local/etc/php
 2. php fpm log path is /usr/local/var/log/php-fpm.log
-3. /etc/cron.d has laravel scheduler
+3. /etc/cron.d has laravel scheduler (only for production image tag)
 4. xdebug settings in /usr/local/etc/php/conf.d/xdebug.ini (only for development image tag)
