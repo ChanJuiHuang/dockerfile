@@ -31,7 +31,7 @@ RUN chmod a+x /root/composer-installer.sh && bash -c /root/composer-installer.sh
 
 COPY ./php-ini/php.ini-production /usr/local/etc/php/php.ini-production
 COPY ./php-ini/php.ini-development /usr/local/etc/php/php.ini-development
-RUN mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
 COPY ./php-ini/conf.d/* /usr/local/etc/php/conf.d/
 RUN mv /usr/local/etc/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini.disable
