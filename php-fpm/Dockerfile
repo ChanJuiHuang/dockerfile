@@ -1,7 +1,5 @@
 FROM php:7.4-fpm
 
-ARG APP_ENV=production
-
 RUN apt-get update && apt-get install -y wget \
     cron \
     libpq-dev \
