@@ -14,7 +14,8 @@ RUN docker-php-ext-install --ini-name pdo_mysql.ini pdo_mysql && \
     docker-php-ext-install --ini-name pdo_pgsql.ini pdo_pgsql && \
     docker-php-ext-install --ini-name sockets.ini sockets && \
     docker-php-ext-install --ini-name pcntl.ini pcntl && \
-    docker-php-ext-install --ini-name opcache.ini opcache
+    docker-php-ext-install --ini-name opcache.ini opcache && \
+    docker-php-ext-install --ini-name zip.ini zip
 
 RUN pecl install igbinary msgpack && \
     echo extension=igbinary.so > /usr/local/etc/php/conf.d/igbinary.ini && \
